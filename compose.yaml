@@ -1,0 +1,15 @@
+name: toys
+services:
+  backend:
+    build: backend
+
+  db:
+    image: postgres:12.1-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      # POSTGRES_PASSWORD: postgres
+      # POSTGRES_DB: toys
+    ports:
+      - 5432:5432
+    
