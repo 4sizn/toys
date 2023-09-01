@@ -2,6 +2,8 @@ name: toys
 services:
   backend:
     build: backend
+    ports:
+      - 3000:3000
 
   db:
     image: postgres:15.4
@@ -12,6 +14,9 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
     ports:
       - 5432:5432
+    volumes:
+      # - ./scripts/db/postgresql.conf:/usr/share/postgresql/15/postgresql.conf
+      - db-data:/var/lib/postgresql/data
 
   db-admin:
     image: dpage/pgadmin4
@@ -21,3 +26,6 @@ services:
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
     ports:
       - 5050:80
+
+volumes:
+  db-data: {}
