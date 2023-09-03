@@ -1,9 +1,9 @@
 name: toys
 services:
-  backend:
-    build: backend
-    ports:
-      - 3000:3000
+  # backend:
+  #   build: backend
+  #   ports:
+  #     - 3000:3000
 
   db:
     image: postgres:15.4
