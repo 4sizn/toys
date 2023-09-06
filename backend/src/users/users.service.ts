@@ -13,4 +13,18 @@ export class UsersService {
   async findOne(userID: string): Promise<any | undefined> {
     return this.users.find((user) => user.userID === userID);
   }
+
+  async create(
+    userID: string,
+    password: string,
+    username: string,
+  ): Promise<any> {
+    const user = {
+      userID,
+      password,
+      username,
+    };
+    this.users.push(user);
+    return user;
+  }
 }

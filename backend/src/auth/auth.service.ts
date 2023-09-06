@@ -1,4 +1,8 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  UnauthorizedException,
+} from '@nestjs/common';
 import { UsersService } from 'src/users/users.service';
 import { JwtService } from '@nestjs/jwt';
 
@@ -20,5 +24,23 @@ export class AuthService {
     return {
       access_token: await this.jwtService.signAsync(payload),
     };
+  }
+
+  //회원가입
+  async signUp(
+    userID: string,
+    password: string,
+    username: string,
+  ): Promise<any> {
+    const user = await this.userService.findOne(userID);
+    if (!userID || !password || !username) {
+      throw new BadRequestException('모든 항목을 입력해주세요.');
+    }
+
+    if (user) {
+      throw new BadRequestException('이미 존재하는 아이디입니다.');
+    }
+
+    return this.userService.create(userID, password, username);
   }
 }
