@@ -1,5 +1,5 @@
 <h1 class="text-3xl font-bold underline">Hello world!</h1>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6">
+<div class="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8">
 	<!-- Columns -->
 	<div class="bg-red-300">
 		<h5>1</h5>
