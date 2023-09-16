@@ -2,7 +2,7 @@
 	<div class="min-h-screen flex items-center justify-center">
 		<div class="max-w-md w-full p-6 bg-white rounded-lg shadow-lg">
 			<h1 class="text-2xl font-semibold text-center text-gray-500 mt-8 mb-6">회원가입</h1>
-			<form>
+			<form action="?/signup" method="POST">
 				<div class="mb-4">
 					<label for="username" class="block mb-2 text-sm text-gray-600">이름</label>
 					<input
@@ -53,7 +53,7 @@
 			</form>
 			<div class="text-center">
 				<p class="text-sm">
-					이미 계정이 있나요? <a href="#" class="text-cyan-600">로그인</a>
+					이미 계정이 있나요? <a href="/login" class="text-cyan-600">로그인</a>
 				</p>
 			</div>
 		</div>

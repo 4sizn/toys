@@ -1,0 +1,26 @@
+{
+	"reels": {
+		"thumbnail_resources": [
+			{
+				"display_url": "http://placekitten.com/640/640",
+				"display_resource": [
+					{
+						"src": "http://placekitten.com/640/640",
+						"config_width": 640,
+						"config_height": 640
+					}
+				]
+			},
+			{
+				"display_url": "http://placekitten.com/640/640",
+				"display_resource": [
+					{
+						"src": "http://placekitten.com/640/640",
+						"config_width": 640,
+						"config_height": 640
+					}
+				]
+			}
+		]
+	}
+}
