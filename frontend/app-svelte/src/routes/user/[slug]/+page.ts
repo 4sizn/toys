@@ -8,8 +8,6 @@ export const load: PageLoad = async ({ fetch }) => {
 				'Content-Type': 'Application/json'
 			}
 		}).then((d) => d.json());
-
-		console.log('hsshin', res);
 		return {
 			reels: res
 		};
