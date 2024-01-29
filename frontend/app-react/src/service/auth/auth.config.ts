@@ -1,12 +1,18 @@
 import { NextAuthConfig } from "next-auth";
 import credentials from "next-auth/providers/credentials";
 
+import GitHub from "next-auth/providers/github";
+
 export const authConfig = {
   pages: {
     signIn: "/login",
     signOut: "/logout",
   },
   providers: [
+    GitHub({
+      clientId: process.env.GITHUB_ID,
+      clientSecret: process.env.GITHUB_SECRET,
+    }),
     credentials({
       authorize: (credentials) => {
         return {
