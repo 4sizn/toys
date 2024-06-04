@@ -1,15 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
-import Row from "./Row";
+import Column from "./Column";
 
 const meta = {
-  title: "Example/Row",
-  component: Row,
-  parameters: {
-    layout: "fullscreen",
-  },
-  tags: ["autodocs"],
-} satisfies Meta<typeof Row>;
+  title: "Example/Column",
+  component: Column,
+} satisfies Meta<typeof Column>;
 
 export default meta;
 
@@ -19,6 +14,6 @@ export const Default: Story = {
   args: {
     horizontalAlign: "center",
     verticalAlign: "center",
-    children: "asdf",
+    children: "Hello, world!",
   },
 };
