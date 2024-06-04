@@ -19,6 +19,11 @@ export const Default: Story = {
   args: {
     horizontalAlign: "center",
     verticalAlign: "center",
-    children: "asdf",
+    children: (
+      <>
+        <div>1</div>
+        <div>2</div>
+      </>
+    ),
   },
 };
