@@ -1,4 +1,5 @@
 import type { Preview } from "@storybook/react";
+import next from "next";
 
 const preview: Preview = {
   parameters: {
@@ -7,6 +8,9 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
+    },
+    nextjs: {
+      appDirectory: true,
     },
   },
 };
