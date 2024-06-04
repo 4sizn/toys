@@ -1,13 +1,22 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
+import { themes } from "@storybook/theming";
 import Row from "./Row";
+
+const prefersDarkColorScheme = () =>
+  window &&
+  window.matchMedia &&
+  window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 const meta = {
   title: "Example/Row",
   component: Row,
   parameters: {
     layout: "fullscreen",
+    docs: {
+      theme: prefersDarkColorScheme() ? themes.dark : themes.normal,
+    },
   },
+
   tags: ["autodocs"],
 } satisfies Meta<typeof Row>;
 
@@ -17,8 +26,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    horizontalAlign: "center",
-    verticalAlign: "center",
+    horizontalAlign: "left",
+    verticalAlign: "bottom",
     children: (
       <>
         <div>1</div>

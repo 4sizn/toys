@@ -23,6 +23,14 @@ function Row({
   ...props
 }: RowProps<"div">) {
   const Element = initAs("div", as);
+  props.className = [
+    props.className,
+    "flex",
+    `justify-${horizontalAlign}`,
+    `items-${verticalAlign}`,
+  ]
+    .filter(Boolean)
+    .join(" ");
   return <Element {...props} />;
 }
 
