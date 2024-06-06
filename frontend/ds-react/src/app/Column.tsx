@@ -1,4 +1,4 @@
-import React from "react";
+import { forwardRef } from "react";
 
 import { MakeProps, PolymorphicRef, initAs } from "@/core";
 
@@ -45,4 +45,4 @@ function Column(
   return <Element ref={ref} {...props} />;
 }
 
-export default React.forwardRef(Column);
+export default forwardRef(Column);
