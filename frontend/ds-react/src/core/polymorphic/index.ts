@@ -2,7 +2,7 @@
  * @description atomic하고 polymorphic한 컴포넌트를 만들기 위한 함수
  */
 
-type PolymorphicRef<T extends React.ElementType> =
+export type PolymorphicRef<T extends React.ElementType> =
   React.ComponentPropsWithRef<T>["ref"];
 
 type AsProp<T extends React.ElementType> = {

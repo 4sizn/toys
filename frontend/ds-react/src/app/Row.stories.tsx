@@ -1,11 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { themes } from "@storybook/theming";
-import Row from "./Row";
 
-const prefersDarkColorScheme = () =>
-  window &&
-  window.matchMedia &&
-  window.matchMedia("(prefers-color-scheme: dark)").matches;
+import Row from "./Row";
+import { prefersDarkColorScheme } from "@/core/utils";
 
 const meta = {
   title: "Example/Row",
