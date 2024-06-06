@@ -5,7 +5,7 @@ import { Avatar } from "@/components/avatar";
 import { TextBubble } from "@/components/text-bubble";
 import { cn } from "@/lib/utils";
 import useScrollTo from "@/lib/useScrollTo";
-import { useEffect, useRef } from "react";
+import { useState } from "react";
 import { MessageContents } from "@/components/chats/message";
 import { ChatInput } from "@/components/chat-input";
 
@@ -76,6 +76,48 @@ const OtherMessage = (props: MessageProps) => {
 
 export default function ChatPage() {
   const { scrollToBottom } = useScrollTo();
+  const [messages, setMessages] = useState([
+    {
+      isMe: false,
+      message: "안녕하세요",
+      type: "text",
+    },
+    {
+      isMe: true,
+      message: "안녕하세요",
+      type: "text",
+    },
+    {
+      isMe: false,
+      message: "안녕하세요",
+      type: "text",
+    },
+    {
+      isMe: false,
+      message: "안녕하세요",
+      type: "text",
+    },
+    {
+      isMe: true,
+      message: "안녕하세요",
+      type: "text",
+    },
+    {
+      isMe: false,
+      message: "안녕하세요",
+      type: "text",
+    },
+    {
+      isMe: true,
+      message: "안녕하세요",
+      type: "text",
+    },
+    {
+      isMe: false,
+      message: "안녕하세요",
+      type: "text",
+    },
+  ]);
 
   return (
     <div>
@@ -86,41 +128,25 @@ export default function ChatPage() {
             2024년 6월 5일 수요일
           </TextBubble>
         </div>
-        <li>
-          <MyMessage />
-        </li>
-        <li>
-          <OtherMessage />
-        </li>
-        <li>
-          <MyMessage />
-        </li>
-        <li>
-          <OtherMessage />
-        </li>
-        <li>
-          <MyMessage />
-        </li>
-        <li>
-          <OtherMessage />
-        </li>
-        <li>
-          <MyMessage />
-        </li>
-        <li>
-          <OtherMessage />
-        </li>
-        <li>
-          <MyMessage />
-        </li>
-        <li>
-          <OtherMessage />
-        </li>
+        {messages.map((message, index) => (
+          <li key={index}>{message.isMe ? <MyMessage /> : <OtherMessage />}</li>
+        ))}
       </ul>
       <div className={cn("sticky bottom-0")}>
         <ChatInput
           onSubmit={(data) => {
-            console.log("hsshin", data);
+            setMessages((prev) => [
+              ...prev,
+              {
+                isMe: true,
+                message: data.content,
+                type: "text",
+              },
+            ]);
+            window.setTimeout(() => {
+              scrollToBottom();
+              console.log("hsshin", data);
+            }, 0);
           }}
         />
       </div>
